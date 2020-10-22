@@ -1,7 +1,7 @@
 <template>
-    <audio :src="audio" @loadeddata="loaded.audio = true" loop class="audio" ref="audio"></audio>
+    <audio :src="audio" @loadeddata="updateData('audio', $event)" loop class="audio" ref="audio"></audio>
     <div class="video-container">
-        <video loop muted class="video" @loadeddata="loaded.video = true" ref="video">
+        <video loop muted class="video" @loadeddata="updateData('video', $event)" ref="video">
             <source :src="video"/>
             Your browser does not support the video tag.
         </video>
@@ -58,6 +58,11 @@ export default {
             this.clicked = true
             this.$refs.video.play()
             this.$refs.audio.play()
+        },
+        updateData(property, event){
+            if(event.target.readyState >= 3){
+                this.loaded[property] = true
+            }
         }
     },
     mounted(){
