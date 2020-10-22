@@ -1,0 +1,46 @@
+{
+    "contact": {
+        "steam":"https://steamcommunity.com/profiles/antisouuu/",
+        "discord": "vasketti#2527"
+    },
+
+    "accounts": [
+        {
+            "Steam": {
+                "link": "https://steamcommunity.com/profiles/antisouuu/",
+                "LVL": 3,
+                "Inventory": 3,
+                "Wallet": 7.41,
+                "Price": 75.41,
+                "Games": ["CS:GO"]
+            },
+            "CS:GO": {
+                "screenshot": "https://i.ytimg.com/vi/aVV2uVL-HYo/maxresdefault.jpg",
+                "Hours": 30,
+                "LVL": 4,
+                "Badges": [],
+                "MM": "Unranked",
+                "WM": "Unranked"
+            }
+
+        }
+    ],
+    
+    "sections":{
+        "Commends": [
+            ["Amount", "Price €"],
+            [50, 0.50],
+            [100, 1.00],
+            [200, 2.00],
+            [300, 3.00]
+        ],
+    
+        "Comments": [
+            ["Amount", "Price €"],
+            [50, 0.50],
+            [100, 1.00],
+            [200, 2.00],
+            [300, 3.00]
+        ]
+    }
+}
