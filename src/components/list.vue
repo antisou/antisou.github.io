@@ -5,7 +5,7 @@
     <li class="section__item" v-for="(item, name) in content" :key="name">
       <a v-if="String(item).match(/http/g)" :href="item">{{item}}</a>
       <span v-else-if="!Array.isArray(item)">
-        {{ name ? `${name}: ${item}` : item }}
+        {{ isNaN(name) ? `${name}: ${item}` : item }}
       </span>
       <list v-else :content="item" :title="name"></list>
     </li>
