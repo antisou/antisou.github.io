@@ -1,7 +1,6 @@
 <template>
-    <audio :src="audio" @loadeddata="updateData('audio', $event)" loop class="audio" ref="audio"></audio>
     <div class="video-container">
-        <video loop muted class="video" @loadeddata="updateData('video', $event)" ref="video">
+        <video loop class="video" @loadeddata="loadedVideo = true" ref="video">
             <source :src="video"/>
             Your browser does not support the video tag.
         </video>
@@ -21,7 +20,7 @@
                     <p class="popup__text">Website status:<br> {{ text }}</p>
                 </div>
                 <div class="popup__button-container">
-                    <button :disabled="!(loaded.audio && loaded.video)" :class="['popup__button', disable]" @click="playThings" >Ok</button>
+                    <button :disabled="!loadedVideo" :class="['popup__button', disable]" @click="this.$refs.video.play(), clicked = true" >Ok</button>
                 </div>
             </div>
         </div>
@@ -29,40 +28,23 @@
 </template>
 
 <script>
-import video from "../background/filmik.webm"
-import audio from "../background/muzyka.mp3"
+import video from '../background/video.webm'
 import icon from "../icon/win95iconnetwork.png"
 export default {
     data() {
         return {
-            video,
-            audio,
             icon,
+            video,
             clicked: false,
-            loaded: {
-                video: false,
-                audio: false,
-            }
+            loadedVideo: false
         }
     },
     computed: {
         text(){
-            return this.loaded.audio && this.loaded.video ? 'Website loaded' : 'Loading the website'
+            return this.loadedVideo ? 'Website loaded' : 'Loading the website'
         },
         disable(){
-            return this.loaded.audio && this.loaded.video ? 'popup__button--enabled' : 'popup__button--disabled'
-        }
-    },
-    methods: {
-        playThings(){
-            this.clicked = true
-            this.$refs.video.play()
-            this.$refs.audio.play()
-        },
-        updateData(property, event){
-            if(event.target.readyState >= 3){
-                this.loaded[property] = true
-            }
+            return this.loadedVideo ? 'popup__button--enabled' : 'popup__button--disabled'
         }
     },
     mounted(){
@@ -70,10 +52,8 @@ export default {
             //methods doesnt work even if i bind "this" object, so gotta copy and paste
             if(document.visibilityState === 'visible' && this.clicked){
                 this.$refs.video.play()
-                this.$refs.audio.play()
             }else{
                 this.$refs.video.pause()
-                this.$refs.audio.pause()
             }
         })
     }
