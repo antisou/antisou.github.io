@@ -17,7 +17,7 @@
                 </div>
                 <div class="popup__content">
                     <img :src="icon" alt="" class="icon">
-                    <p class="popup__text">Website status:<br> {{ isSafari ? 'Change your browser' : text }}</p>
+                    <p class="popup__text">Website status:<br> {{ isSafari ? 'retard' : text }}</p>
                 </div>
                 <div class="popup__button-container">
                     <button :disabled="!loadedVideo" :class="['popup__button', disable]" @click="this.$refs.video.play(), clicked = true" >Ok</button>
