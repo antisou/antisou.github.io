@@ -17,7 +17,7 @@
                 </div>
                 <div class="popup__content">
                     <img :src="icon" alt="" class="icon">
-                    <p class="popup__text">Website status:<br> {{ text }}</p>
+                    <p class="popup__text">Website status:<br> {{ isSafari ? 'Change your browser' : text }}</p>
                 </div>
                 <div class="popup__button-container">
                     <button :disabled="!loadedVideo" :class="['popup__button', disable]" @click="this.$refs.video.play(), clicked = true" >Ok</button>
@@ -33,6 +33,7 @@ import icon from "../icon/win95iconnetwork.png"
 export default {
     data() {
         return {
+            isSafari: navigator.userAgent.match(/safari/i) ? true : false,
             icon,
             video,
             clicked: false,
