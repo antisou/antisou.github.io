@@ -1,6 +1,6 @@
 <template>
     <div class="video-container">
-        <video loop class="video" @loadeddata="loadedVideo = true" ref="video">
+        <video loop class="video" ref="video">
             <source :src="video"/>
             Your browser does not support the video tag.
         </video>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="popup__content">
                     <img :src="icon" alt="" class="icon">
-                    <p class="popup__text">Website status:<br> {{ isSafari ? 'retard' : text }}</p>
+                    <p class="popup__text">Website status:<br> {{ text }}</p>
                 </div>
                 <div class="popup__button-container">
                     <button :disabled="!loadedVideo" :class="['popup__button', disable]" @click="this.$refs.video.play(), clicked = true" >Ok</button>
@@ -33,7 +33,6 @@ import icon from "../icon/win95iconnetwork.png"
 export default {
     data() {
         return {
-            isSafari: navigator.userAgent.match(/safari/i) ? true : false,
             icon,
             video,
             clicked: false,
@@ -50,13 +49,13 @@ export default {
     },
     mounted(){
         document.addEventListener('visibilitychange', ()=>{
-            //methods doesnt work even if i bind "this" object, so gotta copy and paste
             if(document.visibilityState === 'visible' && this.clicked){
                 this.$refs.video.play()
             }else{
                 this.$refs.video.pause()
             }
         })
+        this.$refs.video.addEventListener('loadeddata', ()=>this.loadedVideo = true)
     }
 }
 </script>
