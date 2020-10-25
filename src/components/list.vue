@@ -3,7 +3,7 @@
   <p class="section__list-title">{{title}} info:</p>
   <ul class="section__list">
     <li class="section__item" v-for="(item, name) in content" :key="name">
-      <a v-if="String(item).match(/http/g)" :href="item">{{item}}</a>
+      <a v-if="String(item).match(/http/g)" :href="item" class="section__anchor">{{item}}</a>
       <span v-else-if="!Array.isArray(item)">
         {{ isNaN(name) ? `${name}: ${item}` : item }}
       </span>

@@ -15,7 +15,7 @@
                 "Games": ["CS:GO", "Sea of Thieves", "Enclave"]
             },
             "CS:GO": {
-                "link": "https://i.imgur.com/0HJPIrx.png",
+                "screenshot": "https://i.imgur.com/0HJPIrx.png",
                 "Hours": 169,
                 "LVL": 24,
                 "Badges": [],

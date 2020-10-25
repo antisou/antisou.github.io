@@ -70,7 +70,7 @@ html, body
     z-index: 1
 
 .section
-    min-height: 100vh
+    min-height: calc(100vh - 125px)
     left: 0
     right: 0
     margin: 0 auto
@@ -99,6 +99,7 @@ html, body
             margin: 10px 0 0 0
 
     &__anchor
+        background: $grayish-white
         color: blue
 
         &:visited
@@ -212,6 +213,7 @@ html, body
             outline: none
 
         &--disabled
+            pointer-events: none
             border-top: 1px solid #5F5F5F
             border-left: 1px solid #5F5F5F
             border-right: 2px solid #5F5F5F
@@ -283,8 +285,11 @@ html, body
 
 @media only screen and (max-width: 768px)
 
-    .section__img
-        max-width: 90vw
+    .section
+        background: calc(100vh - 40px)
+
+        &__img
+            max-width: 90vw
 
     .main
         height: 100%
@@ -295,9 +300,18 @@ html, body
     .footer
         height: 60px
 
-@media only screen and (max-width: 400px)
+@media only screen and (max-width: 420px)
 
-.section
+    .section
 
-    &__title
-        font-size: 2rem
+        &__title
+            font-size: 1.8rem
+
+        &__title-sub
+            font-size: 1.6rem
+
+        &__title-sub
+            font-size: 1.6rem
+
+        &__item
+            font-size: 1.2rem
