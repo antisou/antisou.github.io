@@ -24,12 +24,13 @@ html, body
 .category-container
     margin-bottom: 10px
     position: relative
-    display: flex
-    justify-content: center
-    align-items: center
 
 .category-title
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
     position: absolute
+    margin: 0
 
 main
     display: flex
@@ -74,10 +75,8 @@ footer
                 margin: 0
 
 .title, .sub-title, .paragraph
-    margin: 10px
     font-family: Georgia, serif
     text-align: center
-    color: $pink
 
 .link
     color: blue
@@ -86,28 +85,32 @@ footer
         color: slateblue
 
 .paragraph
+    color: $pink
+    max-width: 322px
     font-family: 'Cutive Mono', monospace
     font-size: 1.4rem
 
 .title
+    color: $pink
+    margin: 10px
     font-size: 2.4rem
 
 .sub-title
+    color: $grayish-white
     font-size: 1.8rem
 
 .title-container
     display: flex
     justify-content: center
     align-items: center
-    flex-grow: 1
     min-height: 100px
 
 .bottom-section
     padding: 40px
     display: grid
-    flex-grow: 1
     row-gap: 40px
     column-gap: 40px
+    min-height: 100px
     grid-template-columns: repeat(2, auto)
 
 .shoppy-container, .youtube-channel
