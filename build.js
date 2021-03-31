@@ -7,7 +7,7 @@ for(const key in json){
   html+=`<div class="${key}"><div class="category-container">
       <h2 class="category-title sub-title">${key}</h2>
       <svg viewBox="0 0 322 50" width="322">
-        <path d="M50,0 L261,0 L322,50 L0,50z" fill="#0a0a0a" stroke="#FBAED2" />
+        <path d="M62,0 L262,0 L322,50 L0,50z" fill="#0a0a0a" stroke="#FBAED2" />
       </svg>
     </div>`
   const array = json[key]
