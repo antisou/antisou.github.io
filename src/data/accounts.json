@@ -1,0 +1,60 @@
+{
+    "contact": {
+        "steam":"https://steamcommunity.com/id/vaskettiservice/",
+        "discord": "ａｎｔｉｓｏｕ#2527"
+    },
+
+    "accounts": [
+        {
+            "Steam": {
+                "link": "https://steamcommunity.com/id/u8q8o/",
+                "LVL": 2,
+                "Inventory": "1$",
+                "Wallet": "3,15₽",
+                "Price": "11€",
+                "Games": ["CS:GO", "Sea of Thieves", "Enclave"]
+            },
+            "CS:GO": {
+                "screenshot": "https://i.imgur.com/0HJPIrx.png",
+                "Hours": 169,
+                "LVL": 24,
+                "Badges": [],
+                "MM": "Silver 4",
+                "WM": "Forbidden"
+            }
+
+        },
+        {
+            "Steam": {
+                "link": "https://steamcommunity.com/profiles/76561199033410085",
+                "LVL": 4,
+                "Inventory": 3,
+                "Wallet": "0,22€",
+                "Price": "12€",
+                "Games": ["Half Life Pack", "DOOM", "Wallpaper Engine", "The Ultimate DOOM","Spec Ops: The Line", "STAR WARS™: The Old Republic™"]
+            },
+            "CS:GO": {
+                "screenshot": "https://a.allegroimg.com/original/1ebca7/d4060cdd4386b1f1efbb68331c9d",
+                "Hours": 357,
+                "LVL": 25,
+                "MM": "Gold nova 2",
+                "WM": "Silver Elite Master"
+            }
+
+        }
+    ],
+    
+    "sections":{
+        "Commends": [
+            ["Amount", "Price €"],
+            [50, 0.50],
+            [100, 1.00],
+            [200, 2.00],
+            [300, 3.00]
+        ],
+    
+        "Comments (coming soon)": [
+            ["Amount", "Price €"]
+        ]
+    }
+}
